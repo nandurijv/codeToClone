@@ -15,27 +15,26 @@ import {
 import {
   HamburgerIcon,
   CloseIcon,
-  AddIcon,
   MoonIcon,
   SunIcon,
 } from "@chakra-ui/icons";
 import Logo from "./Logo";
 
 const Links = ["Home", "Details", "Timeline", "FAQs"];
-const Navlinks = ({ children }: { children: ReactNode }) => {
-  <Link
-    px={2}
-    py={1}
-    rounded={"md"}
-    _hover={{
-      textDecoration: "none",
-      bg: useColorModeValue("gray.200", "gray.700"),
-    }}
-    href={"#"}
-  >
-    {children}
-  </Link>;
-};
+// const Navlinks = ({ children }: { children: ReactNode }) => {
+//   <Link
+//     px={2}
+//     py={1}
+//     rounded={"md"}
+//     _hover={{
+//       textDecoration: "none",
+//       bg: useColorModeValue("gray.200", "gray.700"),
+//     }}
+//     href={"#"}
+//   >
+//     {children}
+//   </Link>;
+// };
 
 function Navbar() {
   const { colorMode, toggleColorMode } = useColorMode();
