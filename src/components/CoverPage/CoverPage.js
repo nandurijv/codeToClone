@@ -8,22 +8,44 @@ import {
   useColorModeValue,
   Flex,
   Box,
+  Button,
+  Heading,
 } from "@chakra-ui/react";
 
 function CoverPage() {
   const { colorMode, toggleColorMode } = useColorMode();
+  const borderColor = {
+    light: "gray.900",
+    dark: "gray.100",
+  };
   return (
     <>
-      <HStack>
-        <Flex w="100%" h="10em" alignItems={"center"} justifyContent={"space-between"} px={8} py={10}>
-          <EventLogo />
-          <Divider orientation="vertical"/>
-          <Flex alignItems={"center"} justifyContent={"space-between"} direction="column">
-            <h1>Code 2 Clone</h1>
-            <p></p>
-          </Flex>
-        </Flex>
-      </HStack>
+      <Flex w={"100%"} h={"90vh"} px={4} py={4}>
+        <EventLogo />
+        <Divider
+          orientation="vertical"
+          borderColor={borderColor[colorMode]}
+          borderWidth={"1px"}
+        />
+        <VStack
+          alignItems={"center"}
+          justifyContent={"space-between"}
+          direction="column"
+          m={"auto"}
+        >
+          <Heading>Code 2 Clone</Heading>
+          <p></p>
+          <Button
+            variant={"outline"}
+            colorScheme={"green"}
+            size={"lg"}
+            mr={4}
+            borderRadius={"25"}
+          >
+            Register Now
+          </Button>
+        </VStack>
+      </Flex>
     </>
   );
 }
