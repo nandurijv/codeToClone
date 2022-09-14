@@ -11,6 +11,8 @@ import {
   useColorModeValue,
   useColorMode,
   Stack,
+  Show,
+  Hide
 } from "@chakra-ui/react";
 import {
   HamburgerIcon,
@@ -48,13 +50,6 @@ function Navbar() {
         backdropBlur="8px"
       >
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
-          <IconButton
-            size={"md"}
-            icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-            aria-label={"Open Menu"}
-            display={{ md: "none" }}
-            onClick={isOpen ? onClose : onOpen}
-          />
           <Box>
             <Logo />
           </Box>
@@ -71,15 +66,33 @@ function Navbar() {
               </Button>
             </Flex>
           </HStack>
+          <Show below="md">
+          <Flex alignItems={"center"} justifyContent={"space-between"}>
+            <IconButton
+              size={"md"}
+              icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
+              aria-label={"Open Menu"}
+              display={{ md: "none" }}
+              onClick={isOpen ? onClose : onOpen}
+              mr={2}
+            />
+            <Button onClick={toggleColorMode}>
+              {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
+            </Button>
+          </Flex>
+          </Show>
         </Flex>
 
         {isOpen ? (
           <Box pb={4} display={{ md: "none" }}>
-            <Stack as={"nav"} spacing={4}>
+            <Stack as={"nav"} spacing={4} alignItems={"center"} justifyContent={"space-between"}>
               {Links.map((link) => (
                 <Link key={link}>{link}</Link>
               ))}
             </Stack>
+            <Button variant={"solid"} colorScheme={"teal"} size={"sm"} m={0} width={"100%"}>
+              Register Now
+            </Button>
           </Box>
         ) : null}
       </Box>
