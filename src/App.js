@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react';
 import {
   ChakraProvider,
@@ -35,6 +36,18 @@ function App() {
           </VStack>
         </Grid>
       </Box>
+=======
+import * as React from 'react';
+import { ChakraProvider } from '@chakra-ui/react';
+import Navbar from './components/Navbar/Navbar';
+import CoverPage from './components/CoverPage/CoverPage';
+
+function App() {
+  return (
+    <ChakraProvider>
+      <Navbar/>
+      <CoverPage/>
+>>>>>>> 3b49628ce301ef633e92d1faa6b624df6d933430
     </ChakraProvider>
   );
 }
