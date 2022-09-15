@@ -11,6 +11,7 @@ import {
   Button,
   Heading,
   useMediaQuery,
+  Text
 } from "@chakra-ui/react";
 
 function CoverPage() {
@@ -56,11 +57,11 @@ function CoverPage() {
           h={["90vh", "auto"]}
         >
           <Heading>Code 2 Clone</Heading>
-          <p textAlign={"center"}>
-          The story you are writing exists,written in absolutely perfect fashion,some place in the air.
+          <Text align={"center"}>
+          The story you are writing exists, written in absolutely perfect fashion, some place in the air.
           <br/>
-          All you must do is find it,and copy it.
-          </p>
+          All you must do is find it and copy it.
+          </Text>
           <Button
             variant={"outline"}
             colorScheme={"green"}
