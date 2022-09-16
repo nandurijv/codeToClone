@@ -12,15 +12,11 @@ import {
   useColorMode,
   Stack,
   Show,
-  Hide
+  Hide,
 } from "@chakra-ui/react";
-import {
-  HamburgerIcon,
-  CloseIcon,
-  MoonIcon,
-  SunIcon,
-} from "@chakra-ui/icons";
-import Logo from "./Logo";
+import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
+import LogoLight from "../Icons/LogoLight";
+import LogoDark from "../Icons/LogoDark";
 
 const Links = ["Home", "Details", "Timeline", "FAQs"];
 // const Navlinks = ({ children }: { children: ReactNode }) => {
@@ -48,10 +44,15 @@ function Navbar() {
         px={4}
         backdropFilter="auto"
         backdropBlur="8px"
+        position={"fixed"}
+        width="100%"
+        transition={"top  0.6s"}
+        zIndex={"9999"}
+        boxShadow="lg"
       >
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <Box>
-            <Logo />
+            {colorMode === "light"? <LogoLight/>: <LogoDark/>}
           </Box>
           <HStack as={"nav"} spacing={4} display={{ base: "none", md: "flex" }}>
             {Links.map((link) => (
@@ -67,30 +68,41 @@ function Navbar() {
             </Flex>
           </HStack>
           <Show below="md">
-          <Flex alignItems={"center"} justifyContent={"space-between"}>
-            <IconButton
-              size={"md"}
-              icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-              aria-label={"Open Menu"}
-              display={{ md: "none" }}
-              onClick={isOpen ? onClose : onOpen}
-              mr={2}
-            />
-            <Button onClick={toggleColorMode}>
-              {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
-            </Button>
-          </Flex>
+            <Flex alignItems={"center"} justifyContent={"space-between"}>
+              <IconButton
+                size={"md"}
+                icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
+                aria-label={"Open Menu"}
+                display={{ md: "none" }}
+                onClick={isOpen ? onClose : onOpen}
+                mr={2}
+              />
+              <Button onClick={toggleColorMode}>
+                {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
+              </Button>
+            </Flex>
           </Show>
         </Flex>
 
         {isOpen ? (
           <Box pb={4} display={{ md: "none" }}>
-            <Stack as={"nav"} spacing={4} alignItems={"center"} justifyContent={"space-between"}>
+            <Stack
+              as={"nav"}
+              spacing={4}
+              alignItems={"center"}
+              justifyContent={"space-between"}
+            >
               {Links.map((link) => (
                 <Link key={link}>{link}</Link>
               ))}
             </Stack>
-            <Button variant={"solid"} colorScheme={"teal"} size={"sm"} m={0} width={"100%"}>
+            <Button
+              variant={"solid"}
+              colorScheme={"teal"}
+              size={"sm"}
+              m={0}
+              width={"100%"}
+            >
               Register Now
             </Button>
           </Box>

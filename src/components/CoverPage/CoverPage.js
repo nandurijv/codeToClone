@@ -1,5 +1,8 @@
 import React from "react";
-import EventLogo from "./EventLogo";
+import EventLogo from "../Icons/EventLogo";
+import PresentsText from "../Icons/PresentsText"
+import LogoLight from "../Icons/LogoLight";
+import LogoDark from "../Icons/LogoDark";
 import {
   VStack,
   useColorMode,
@@ -21,7 +24,7 @@ function CoverPage() {
     <>
       <Flex
         width={"100%"}
-        h={["100%", "90vh"]}
+        h={["100%", "100vh"]}
         px={4}
         py={4}
         flexWrap={isLargerThan30? "nowrap" : "wrap"}
@@ -31,6 +34,7 @@ function CoverPage() {
         <Flex
           width={["100%", "50%"]}
           h={["100vh", "auto"]}
+          direction="column"
           alignItems={"center"}
           justifyContent={"center"}
           px={"4"}

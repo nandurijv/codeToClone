@@ -1,11 +1,14 @@
 import React from "react";
-import { Text, Box, Flex } from "@chakra-ui/react";
+import { Text, Box, Flex, Heading } from "@chakra-ui/react";
 import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+import "react-responsive-carousel/lib/styles/carousel.css";
 const EventCarousel = ({ slides }) => {
   return (
     <>
-      <Carousel infiniteLoop>
+    <Heading textAlign={"center"}>
+      Event Details
+    </Heading>
+      <Carousel infiniteLoop autoPlay>
         {slides.map((slide) => {
           return (
             <Flex h={["100%", "80vh"]} alignContent={"center"} justifyContent={"center"} alignItems={"center"}>

@@ -1,9 +1,11 @@
 import React from "react";
+import "./animation.css";
 
 function EventLogo() {
   return (
     <>
       <svg
+        id="svg2"
         width="504"
         height="258"
         viewBox="0 0 504 258"
