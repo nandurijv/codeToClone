@@ -1,13 +1,9 @@
 import React from "react";
 import EventLogo from "./EventLogo";
 import {
-  HStack,
   VStack,
   useColorMode,
-  Divider,
-  useColorModeValue,
   Flex,
-  Box,
   Button,
   Heading,
   useMediaQuery,
@@ -16,10 +12,10 @@ import {
 
 function CoverPage() {
   const { colorMode, toggleColorMode } = useColorMode();
-  const borderColor = {
-    light: "gray.900",
-    dark: "gray.100",
-  };
+  // const borderColor = {
+  //   light: "gray.900",
+  //   dark: "gray.100",
+  // };
   const [isLargerThan30] = useMediaQuery("(min-width: 30em)");
   return (
     <>
@@ -57,11 +53,13 @@ function CoverPage() {
           h={["90vh", "auto"]}
         >
           <Heading>Code 2 Clone</Heading>
+          <br/>
           <Text align={"center"}>
           The story you are writing exists, written in absolutely perfect fashion, some place in the air.
           <br/>
           All you must do is find it and copy it.
           </Text>
+          <br/>
           <Button
             variant={"outline"}
             colorScheme={"green"}
