@@ -1,11 +1,11 @@
 import React from "react";
 
-function LogoDark() {
+function LogoDark(props) {
   return (
     <div>
       <svg
-        width="100"
-        height="48"
+        width={props.width}
+        height={props.height}
         viewBox="0 0 196 94"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
