@@ -52,7 +52,7 @@ function Navbar() {
       >
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <Box>
-            {colorMode === "light"? <LogoLight/>: <LogoDark/>}
+            {colorMode === "light"? <LogoLight width={100} height={48}/>: <LogoDark width={100} height={48}/>}
           </Box>
           <HStack as={"nav"} spacing={4} display={{ base: "none", md: "flex" }}>
             {Links.map((link) => (

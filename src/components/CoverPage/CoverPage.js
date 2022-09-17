@@ -20,6 +20,7 @@ function CoverPage() {
   //   dark: "gray.100",
   // };
   const [isLargerThan30] = useMediaQuery("(min-width: 30em)");
+  
   return (
     <>
       <Flex
@@ -40,6 +41,8 @@ function CoverPage() {
           px={"4"}
           alignContent={"center"}
         >
+          {colorMode === "light"? <LogoLight width={206} height={96}/>: <LogoDark width={206} height={96}/>}
+          <PresentsText/>
           <EventLogo />
         </Flex>
         {/* <Divider
