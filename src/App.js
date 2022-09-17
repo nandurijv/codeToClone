@@ -1,5 +1,5 @@
 import * as React from "react";
-import { ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider, color } from "@chakra-ui/react";
 import Navbar from "./components/Navbar/Navbar";
 import CoverPage from "./components/CoverPage/CoverPage";
 import EventCarousel from "./components/EventCarousel/EventCarousel";
@@ -14,7 +14,7 @@ import {Box} from "@chakra-ui/react"
 function App() {
   return (
     <ChakraProvider>
-      <Box sx={{ background: "black" }}>
+      <Box sx={{ background: "black", color: "white"}}>
         <Navbar />
         <CoverPage />
         <EventCarousel slides={EventData} />
