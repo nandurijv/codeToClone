@@ -14,7 +14,7 @@ import {
 } from "@chakra-ui/react";
 
 function CoverPage() {
-  const { colorMode, toggleColorMode } = useColorMode();
+  //const { colorMode, toggleColorMode } = useColorMode();
   // const borderColor = {
   //   light: "gray.900",
   //   dark: "gray.100",
@@ -24,6 +24,7 @@ function CoverPage() {
   return (
     <>
       <Flex
+        bg={"blackAlpha.700"}
         width={"100%"}
         h={["100%", "100vh"]}
         px={4}
@@ -41,7 +42,8 @@ function CoverPage() {
           px={"4"}
           alignContent={"center"}
         >
-          {colorMode === "light"? <LogoLight width={206} height={96}/>: <LogoDark width={206} height={96}/>}
+          {/* {colorMode === "light"? <LogoLight width={206} height={96}/>: <LogoDark width={206} height={96}/>} */}
+          <LogoDark width={206} height={96}/>
           <PresentsText/>
           <EventLogo />
         </Flex>

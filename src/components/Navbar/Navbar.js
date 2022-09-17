@@ -35,12 +35,12 @@ const Links = ["Home", "Details", "Timeline", "FAQs"];
 // };
 
 function Navbar() {
-  const { colorMode, toggleColorMode } = useColorMode();
+  //const { colorMode, toggleColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
       <Box
-        bg={useColorModeValue("gray.100", "gray.900")}
+        bg={"gray.900"}
         px={4}
         backdropFilter="auto"
         backdropBlur="8px"
@@ -52,7 +52,8 @@ function Navbar() {
       >
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <Box>
-            {colorMode === "light"? <LogoLight width={100} height={48}/>: <LogoDark width={100} height={48}/>}
+            {/* {colorMode === "light"? <LogoLight width={100} height={48}/>: <LogoDark width={100} height={48}/>} */}
+            <LogoDark width={100} height={48}/>
           </Box>
           <HStack as={"nav"} spacing={4} display={{ base: "none", md: "flex" }}>
             {Links.map((link) => (
@@ -62,9 +63,9 @@ function Navbar() {
               <Button variant={"solid"} colorScheme={"teal"} size={"sm"} mr={4}>
                 Register Now
               </Button>
-              <Button onClick={toggleColorMode}>
+              {/* <Button onClick={toggleColorMode}>
                 {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
-              </Button>
+              </Button> */}
             </Flex>
           </HStack>
           <Show below="md">
@@ -77,9 +78,9 @@ function Navbar() {
                 onClick={isOpen ? onClose : onOpen}
                 mr={2}
               />
-              <Button onClick={toggleColorMode}>
+              {/* <Button onClick={toggleColorMode}>
                 {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
-              </Button>
+              </Button> */}
             </Flex>
           </Show>
         </Flex>

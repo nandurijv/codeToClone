@@ -10,6 +10,7 @@ function Timeline() {
         direction="column"
         m={"auto"}
         h="100vh"
+        bg={"blackAlpha.700"}
       >
         <Heading as='h2' size='3xl'>Timeline</Heading>
         <Text align={"center"} fontSize="xl">

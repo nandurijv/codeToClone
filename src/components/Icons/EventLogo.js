@@ -6,7 +6,7 @@ function EventLogo(props) {
     <>
       <svg
         id="svg2"
-        width="500px"
+        width="100%"
         viewBox="0 0 504 258"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
