@@ -56,9 +56,9 @@ function CoverPage() {
           m={"auto"}
           h={["90vh", "auto"]}
         >
-          <Heading>Code 2 Clone</Heading>
+          <Heading size='3xl'>Code 2 Clone</Heading>
           <br/>
-          <Text align={"center"}>
+          <Text fontSize={"lg"} align={"center"}>
           The story you are writing exists, written in absolutely perfect fashion, some place in the air.
           <br/>
           All you must do is find it and copy it.
