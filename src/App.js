@@ -25,7 +25,7 @@ function App() {
       path: "/",
       element: (
         <ChakraProvider>
-          <Box sx={{ background: "black", color: "white" }}>
+          <Box sx={{color: "white" }}>
             <Navbar />
             <CoverPage />
             <EventCarousel slides={EventData} />

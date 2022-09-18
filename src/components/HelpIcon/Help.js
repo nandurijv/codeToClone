@@ -8,9 +8,9 @@ import {
   PopoverArrow,
   PopoverCloseButton,
   Button,
-  useColorMode,
-  toggleColorMode,
-  useColorModeValue,
+  // useColorMode,
+  // toggleColorMode,
+  // useColorModeValue,
   Text,
   Link,
 } from "@chakra-ui/react";
@@ -32,13 +32,14 @@ function Help() {
           </Button>
         </PopoverTrigger>
         <PopoverContent>
-          <PopoverHeader fontWeight="semibold">
-            For any queries contact our Student Coordinator{" "}
+          <PopoverHeader fontWeight="semibold" >
+            <Text color="black">For any queries contact our Student Coordinator{" "}</Text>
           </PopoverHeader>
           <PopoverArrow />
           <PopoverCloseButton />
           <PopoverBody>
-            Satvik Jain : <Link href="#">9460290262</Link>
+            <Text color="black">
+            Satvik Jain : <Link href="#">9460290262</Link></Text>
           </PopoverBody>
         </PopoverContent>
       </Popover>

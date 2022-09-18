@@ -27,7 +27,7 @@ function CoverPage() {
     <>
       <Flex
       id="Home"
-        bg={"blackAlpha.700"}
+        bg={"gray.900"}
         width={"100%"}
         h={["100%", "100vh"]}
         px={4}

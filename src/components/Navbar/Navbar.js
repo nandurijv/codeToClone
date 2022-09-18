@@ -42,7 +42,7 @@ function Navbar() {
   return (
     <>
       <Box
-        bg={"gray.900"}
+        bg={"rgb(12,13,18)"}
         px={4}
         backdropFilter="auto"
         backdropBlur="8px"

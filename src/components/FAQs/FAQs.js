@@ -22,7 +22,7 @@ function FAQs() {
         flexWrap={"wrap"}
         alignItems={"center"}
         justifyContent={"center"}
-        bg={"blackAlpha.700"}
+        bg={"gray.900"}
       >
         <Heading size="2xl">FAQs</Heading>
         <Accordion allowToggle width={"100vw"} ml={"10%"} mr={"10%"} mt={7}>

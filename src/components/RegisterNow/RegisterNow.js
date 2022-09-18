@@ -21,11 +21,10 @@ function RegisterNow() {
   return (
     <>
       <Flex
-        bg={"blackAlpha.700"}
+        bg={"gray.900"}
         width={"100%"}
-        h={["100%", "100vh"]}
         px={4}
-        py={4}
+        py={8}
         flexWrap={isLargerThan30 ? "nowrap" : "wrap"}
         flexDirection
         alignItems={"center"}
@@ -60,7 +59,7 @@ function RegisterNow() {
             </Button>
           </Link>
         </VStack>
-        <Flex
+        {/* <Flex
           width={["100%", "50%"]}
           h={["100vh", "auto"]}
           direction="column"
@@ -68,10 +67,11 @@ function RegisterNow() {
           justifyContent={"center"}
           px={"4"}
           alignContent={"center"}
+          display={isLargerThan30? "":"none"}
         >
-          {/* {colorMode === "light"? <LogoLight width={206} height={96}/>: <LogoDark width={206} height={96}/>} */}
+          {colorMode === "light"? <LogoLight width={206} height={96}/>: <LogoDark width={206} height={96}/>}
           <FormLogo />
-        </Flex>
+        </Flex> */}
         {/* <Divider
           className="rule"
           orientation={isLargerThan30? "vertical" : "horizontal"}

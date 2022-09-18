@@ -8,25 +8,26 @@ import {
   //useColorMode,
   Flex,
   Button,
+  Box,
   Heading,
   Link,
   useMediaQuery,
   Text,
 } from "@chakra-ui/react";
 import FormLogo from "../Icons/FormLogo";
+import { PhoneIcon, EmailIcon } from "@chakra-ui/icons";
 
 function Footer() {
-
   const [isLargerThan30] = useMediaQuery("(min-width: 30em)");
 
   return (
     <>
       <Flex
-        bg={"gray.900"}
+        bg={"rgb(12,13,18)"}
         width={"100%"}
-        h={["100%", "100vh"]}
+        h="auto"
         px={4}
-        py={4}
+        py={10}
         flexWrap={isLargerThan30 ? "nowrap" : "wrap"}
         flexDirection
         alignItems={"center"}
@@ -39,13 +40,28 @@ function Footer() {
           m={"auto"}
           h={["90vh", "auto"]}
         >
-          <Heading size="3xl">Reach Out to Us</Heading>
+          <Heading size="2xl">Reach Out to Us</Heading>
           <br />
-          <Text fontSize={"3xl"} align={"left"}>
-            Satvik Jain
-          </Text>
-          <br />
-          
+          <Flex justifyContent={"space-between"}>
+            <Box>
+            <Text fontSize={"3xl"} align={"left"}>
+              Satvik Jain
+            </Text>
+            <Flex fontSize={"2xl"} align={"left"} alignItems="center">
+              <PhoneIcon m={2} w={5} h={7} />
+              9460290262
+            </Flex></Box>
+            <br />
+            <Box>
+            <Text fontSize={"3xl"} align={"left"}>
+              Ayush Garg
+            </Text>
+            <Flex fontSize={"2xl"} align={"left"} alignItems="center">
+              <PhoneIcon m={2} w={5} h={7} />
+              9460290262
+            </Flex>
+            </Box>
+          </Flex>
         </VStack>
         <Flex
           width={["100%", "50%"]}
@@ -68,7 +84,7 @@ function Footer() {
         /> */}
       </Flex>
     </>
-  )
+  );
 }
 
-export default Footer
+export default Footer;

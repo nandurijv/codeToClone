@@ -42,7 +42,7 @@ const Login = () => {
   useEffect(() => {
     const getUniversity = async () => {
       const res = await fetch(
-        "http://universities.hipolabs.com/search?country=India"
+        "https://universities.hipolabs.com/search?country=India"
       );
       getuni = await res.json();
       // //console.log(getuni[0].name);
