@@ -5,6 +5,7 @@ function Timeline() {
   return (
     <>
       <VStack
+        id="Timeline"
         alignItems={"center"}
         justifyContent={"space-evenly"}
         direction="column"

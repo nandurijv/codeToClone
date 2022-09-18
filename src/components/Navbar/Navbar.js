@@ -1,5 +1,7 @@
 import React from "react";
 import { ReactNode } from "react";
+import { Link as ReactLink } from "react-router-dom";
+import {HashLink } from 'react-router-hash-link';
 import {
   Box,
   Flex,
@@ -15,7 +17,7 @@ import {
   Hide,
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
-import LogoLight from "../Icons/LogoLight";
+//import LogoLight from "../Icons/LogoLight";
 import LogoDark from "../Icons/LogoDark";
 
 const Links = ["Home", "Details", "Timeline", "FAQs"];
@@ -53,16 +55,36 @@ function Navbar() {
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <Box>
             {/* {colorMode === "light"? <LogoLight width={100} height={48}/>: <LogoDark width={100} height={48}/>} */}
-            <LogoDark width={100} height={48}/>
+            <LogoDark width={100} height={48} />
           </Box>
           <HStack as={"nav"} spacing={4} display={{ base: "none", md: "flex" }}>
             {Links.map((link) => (
-              <Link key={link}>{link}</Link>
+              <HashLink
+                to={`/#${link}`}
+                smooth
+                key={link}
+                px={2}
+                py={1}
+                rounded={"md"}
+                _hover={{
+                  textDecoration: "none",
+                  bg: "gray.700",
+                }}
+              >
+                {link}
+              </HashLink>
             ))}
             <Flex alignItems={"center"} justifyContent={"space-between"}>
-              <Button variant={"solid"} colorScheme={"teal"} size={"sm"} mr={4}>
-                Register Now
-              </Button>
+              <Link style={{textDecoration: "none"}} as={ReactLink} to="/register" >
+                <Button
+                  variant={"solid"}
+                  colorScheme={"teal"}
+                  size={"sm"}
+                  mr={4}                  
+                >
+                  Register Now
+                </Button>
+              </Link>
               {/* <Button onClick={toggleColorMode}>
                 {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
               </Button> */}
@@ -97,6 +119,7 @@ function Navbar() {
                 <Link key={link}>{link}</Link>
               ))}
             </Stack>
+
             <Button
               variant={"solid"}
               colorScheme={"teal"}
@@ -104,7 +127,9 @@ function Navbar() {
               m={0}
               width={"100%"}
             >
-              Register Now
+              <Link style={{textDecoration: "none"}} as={ReactLink} to="/register">
+                Register Now
+              </Link>
             </Button>
           </Box>
         ) : null}

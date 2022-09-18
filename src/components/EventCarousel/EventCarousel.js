@@ -5,7 +5,7 @@ import "react-responsive-carousel/lib/styles/carousel.css";
 const EventCarousel = ({ slides }) => {
   return (
     <>
-      <Box py={10} bg={"blackAlpha.700"}>
+      <Box id="Details" py={10} bg={"blackAlpha.700"}>
         <Heading textAlign={"center"}>Event Details</Heading>
         <Carousel infiniteLoop autoPlay>
           {slides.map((slide) => {

@@ -14,6 +14,7 @@ function FAQs() {
   return (
     <>
       <Flex
+        id="FAQs"
         width={"100%"}
         h={["100%", "100vh"]}
         px={4}
@@ -27,7 +28,10 @@ function FAQs() {
         <Accordion allowToggle width={"100vw"} ml={"10%"} mr={"10%"} mt={7}>
           <AccordionItem>
             <h2>
-              <AccordionButton _expanded={{ bg: "tomato", color: "white" }} py={3}>
+              <AccordionButton
+                _expanded={{ bg: "tomato", color: "white" }}
+                py={3}
+              >
                 <Box flex="1" textAlign="left">
                   FAQ 1
                 </Box>
@@ -44,7 +48,10 @@ function FAQs() {
 
           <AccordionItem>
             <h2>
-              <AccordionButton _expanded={{ bg: "tomato", color: "white" }} py={3}>
+              <AccordionButton
+                _expanded={{ bg: "tomato", color: "white" }}
+                py={3}
+              >
                 <Box flex="1" textAlign="left">
                   FAQ 2
                 </Box>
@@ -61,7 +68,10 @@ function FAQs() {
 
           <AccordionItem>
             <h2>
-              <AccordionButton _expanded={{ bg: "tomato", color: "white" }} py={3}>
+              <AccordionButton
+                _expanded={{ bg: "tomato", color: "white" }}
+                py={3}
+              >
                 <Box flex="1" textAlign="left">
                   FAQ 3
                 </Box>
@@ -78,7 +88,10 @@ function FAQs() {
 
           <AccordionItem>
             <h2>
-              <AccordionButton _expanded={{ bg: "tomato", color: "white" }} py={3}>
+              <AccordionButton
+                _expanded={{ bg: "tomato", color: "white" }}
+                py={3}
+              >
                 <Box flex="1" textAlign="left">
                   FAQ 4
                 </Box>
@@ -95,7 +108,10 @@ function FAQs() {
 
           <AccordionItem>
             <h2>
-              <AccordionButton _expanded={{ bg: "tomato", color: "white" }} py={3}>
+              <AccordionButton
+                _expanded={{ bg: "tomato", color: "white" }}
+                py={3}
+              >
                 <Box flex="1" textAlign="left">
                   FAQ 5
                 </Box>
@@ -112,7 +128,10 @@ function FAQs() {
 
           <AccordionItem>
             <h2>
-              <AccordionButton _expanded={{ bg: "tomato", color: "white" }} py={3}>
+              <AccordionButton
+                _expanded={{ bg: "tomato", color: "white" }}
+                py={3}
+              >
                 <Box flex="1" textAlign="left">
                   FAQ 6
                 </Box>

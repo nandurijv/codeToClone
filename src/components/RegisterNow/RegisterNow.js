@@ -2,7 +2,7 @@ import React from "react";
 // import EventLogo from "../Icons/EventLogo";
 // import PresentsText from "../Icons/PresentsText";
 // import LogoDark from "../Icons/LogoDark";
-//import { Link as ReactLink } from "react-router-dom";
+import { Link as ReactLink } from "react-router-dom";
 import {
   VStack,
   //useColorMode,
@@ -15,14 +15,13 @@ import {
 } from "@chakra-ui/react";
 import FormLogo from "../Icons/FormLogo";
 
-function Footer() {
-
+function RegisterNow() {
   const [isLargerThan30] = useMediaQuery("(min-width: 30em)");
 
   return (
     <>
       <Flex
-        bg={"gray.900"}
+        bg={"blackAlpha.700"}
         width={"100%"}
         h={["100%", "100vh"]}
         px={4}
@@ -33,19 +32,33 @@ function Footer() {
         justifyContent={"space-between"}
       >
         <VStack
-          alignItems={"left"}
+          alignItems={"center"}
           justifyContent={"space-evenly"}
           direction="column"
           m={"auto"}
           h={["90vh", "auto"]}
         >
-          <Heading size="3xl">Reach Out to Us</Heading>
+          <Heading size="3xl">Haven't Registered Yet?</Heading>
           <br />
-          <Text fontSize={"3xl"} align={"left"}>
-            Satvik Jain
+          <Text fontSize={"3xl"} align={"center"}>
+            What are you waitng for?
           </Text>
           <br />
-          
+          <Link
+            style={{ textDecoration: "none" }}
+            as={ReactLink}
+            to="/register"
+          >
+            <Button
+              variant={"solid"}
+              colorScheme={"red"}
+              size={"lg"}
+              mr={4}
+              borderRadius={"25"}
+            >
+              Register Now
+            </Button>
+          </Link>
         </VStack>
         <Flex
           width={["100%", "50%"]}
@@ -68,7 +81,7 @@ function Footer() {
         /> */}
       </Flex>
     </>
-  )
+  );
 }
 
-export default Footer
+export default RegisterNow;
