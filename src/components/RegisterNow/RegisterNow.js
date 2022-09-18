@@ -37,7 +37,7 @@ function RegisterNow() {
           m={"auto"}
           h={["90vh", "auto"]}
         >
-          <Heading size="3xl">Haven't Registered Yet?</Heading>
+          <Heading textAlign="center" size="3xl">Haven't Registered Yet?</Heading>
           <br />
           <Text fontSize={"3xl"} align={"center"}>
             What are you waitng for?

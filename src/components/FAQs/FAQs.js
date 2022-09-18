@@ -18,7 +18,7 @@ function FAQs() {
         width={"100%"}
         h={["100%", "100vh"]}
         px={4}
-        py={4}
+        py={20}
         flexWrap={"wrap"}
         alignItems={"center"}
         justifyContent={"center"}

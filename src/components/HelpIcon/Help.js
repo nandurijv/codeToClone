@@ -27,6 +27,7 @@ function Help() {
             position="fixed"
             bottom={5}
             right={5}
+            zIndex={999}
           >
             <Text as="b">?</Text>
           </Button>

@@ -38,32 +38,36 @@ function Footer() {
           justifyContent={"space-evenly"}
           direction="column"
           m={"auto"}
-          h={["90vh", "auto"]}
         >
           <Heading size="2xl">Reach Out to Us</Heading>
           <br />
-          <Flex justifyContent={"space-between"}>
+          <Flex
+            direction={isLargerThan30 ? "row" : "column"}
+            justifyContent={"space-between"}
+          >
             <Box>
-            <Text fontSize={"3xl"} align={"left"}>
-              Satvik Jain
-            </Text>
-            <Flex fontSize={"2xl"} align={"left"} alignItems="center">
-              <PhoneIcon m={2} w={5} h={7} />
-              9460290262
-            </Flex></Box>
+              <Text fontSize={"3xl"} align={"left"}>
+                Satvik Jain
+              </Text>
+              <Flex fontSize={"2xl"} align={"left"} alignItems="center">
+                <PhoneIcon m={2} w={5} h={7} />
+                9460290262
+              </Flex>
+            </Box>
             <br />
             <Box>
-            <Text fontSize={"3xl"} align={"left"}>
-              Ayush Garg
-            </Text>
-            <Flex fontSize={"2xl"} align={"left"} alignItems="center">
-              <PhoneIcon m={2} w={5} h={7} />
-              9460290262
-            </Flex>
+              <Text fontSize={"3xl"} align={"left"}>
+                Ayush Garg
+              </Text>
+              <Flex fontSize={"2xl"} align={"left"} alignItems="center">
+                <PhoneIcon m={2} w={5} h={7} />
+                9460290262
+              </Flex>
             </Box>
           </Flex>
         </VStack>
         <Flex
+          display={isLargerThan30 ? "flex" : "none"}
           width={["100%", "50%"]}
           h={["100vh", "auto"]}
           direction="column"

@@ -1,7 +1,7 @@
 import React from "react";
 import { ReactNode } from "react";
 import { Link as ReactLink } from "react-router-dom";
-import {HashLink } from 'react-router-hash-link';
+import { HashLink } from "react-router-hash-link";
 import {
   Box,
   Flex,
@@ -75,12 +75,16 @@ function Navbar() {
               </HashLink>
             ))}
             <Flex alignItems={"center"} justifyContent={"space-between"}>
-              <Link style={{textDecoration: "none"}} as={ReactLink} to="/register" >
+              <Link
+                style={{ textDecoration: "none" }}
+                as={ReactLink}
+                to="/register"
+              >
                 <Button
                   variant={"solid"}
                   colorScheme={"teal"}
                   size={"sm"}
-                  mr={4}                  
+                  mr={4}
                 >
                   Register Now
                 </Button>
@@ -94,6 +98,8 @@ function Navbar() {
             <Flex alignItems={"center"} justifyContent={"space-between"}>
               <IconButton
                 size={"md"}
+                colorScheme={"white"}
+                variant="outline"
                 icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
                 aria-label={"Open Menu"}
                 display={{ md: "none" }}
@@ -116,7 +122,17 @@ function Navbar() {
               justifyContent={"space-between"}
             >
               {Links.map((link) => (
-                <Link key={link}>{link}</Link>
+                <HashLink
+                  to={`/#${link}`}
+                  smooth
+                  key={link}
+                  _hover={{
+                    textDecoration: "none",
+                    bg: "gray.700",
+                  }}
+                >
+                  {link}
+                </HashLink>
               ))}
             </Stack>
 
@@ -127,7 +143,11 @@ function Navbar() {
               m={0}
               width={"100%"}
             >
-              <Link style={{textDecoration: "none"}} as={ReactLink} to="/register">
+              <Link
+                style={{ textDecoration: "none" }}
+                as={ReactLink}
+                to="/register"
+              >
                 Register Now
               </Link>
             </Button>
