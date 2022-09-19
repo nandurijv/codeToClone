@@ -7,7 +7,7 @@ const EventCarousel = ({ slides }) => {
     <>
       <Box id="Details" py={10} bg={"gray.900"}>
         <Heading textAlign={"center"}>Event Details</Heading>
-        <Carousel infiniteLoop autoPlay>
+        <Carousel infiniteLoop autoPlay showThumbs={"false"}>
           {slides.map((slide) => {
             return (
               <Flex

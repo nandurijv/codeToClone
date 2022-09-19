@@ -68,5 +68,3 @@ function App() {
 }
 
 export default App;
-/* <RegistrationForm/>
-      <Login/>  */

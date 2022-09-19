@@ -35,21 +35,23 @@ const CFaPhoneAlt = chakra(FaPhoneAlt);
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [showPassword1, setShowPassword1] = useState(false);
   const handleShowClick = () => setShowPassword(!showPassword);
+  const handleShowClick1 = () => setShowPassword1(!showPassword1);
   // function University(){
-  const [university, setUniversity] = useState([]);
-  let getuni = [];
-  useEffect(() => {
-    const getUniversity = async () => {
-      const res = await fetch(
-        "https://universities.hipolabs.com/search?country=India"
-      );
-      getuni = await res.json();
-      // //console.log(getuni[0].name);
-      setUniversity(await getuni);
-    };
-    getUniversity();
-  }, []);
+  // const [university, setUniversity] = useState([]);
+  // let getuni = [];
+  // useEffect(() => {
+  //   const getUniversity = async () => {
+  //     const res = await fetch(
+  //       "http://universities.hipolabs.com/search?country=India"
+  //     );
+  //     getuni = await res.json();
+  //     // //console.log(getuni[0].name);
+  //     setUniversity(await getuni);
+  //   };
+  //   getUniversity();
+  // }, []);
   const [category, setCategory] = useState(null);
   const [isLargerThan30] = useMediaQuery("(min-width: 30em)");
 
@@ -97,8 +99,8 @@ const Login = () => {
               alignItems="center"
               width={"100px"}
             >
-              <Box
-                minW={{ base: "90%", md: "468px" }}
+              <Flex
+                minW={{ base: "75vw", md: "468px" }}
                 bg={"whiteAlpha.900"}
                 color={"blackAlpha.900"}
                 borderRadius={"25px"}
@@ -123,15 +125,21 @@ const Login = () => {
                     <div className="clgnames">
                       <FormControl isRequired>
                         <FormLabel>University</FormLabel>
-                        <Select
+                        {/* <Select
                           placeholder="Select university "
                           borderColor="blackAlpha.500"
                           onChange={(e) => setCategory(e.target.value)}
                         >
                           {university.map((i, index) => (
                             <option key={index}>{i.name}</option>
-                          ))}   
-                        </Select>
+                          ))}
+                        </Select> */}
+                        <Input
+                          id="university"
+                          placeholder="University Name"
+                          _placeholder={{ color: "blackAlpha.700" }}
+                          borderColor="blackAlpha.500"
+                        />
                         {/* {console.log(category)} */}
                       </FormControl>
                     </div>
@@ -139,12 +147,14 @@ const Login = () => {
                       <Grid templateColumns="repeat(2, 1fr)" gap={4}>
                         <FormLabel>First name</FormLabel>
                         <Input
+                          id="firstname"
                           placeholder="First name"
                           _placeholder={{ color: "blackAlpha.700" }}
                           borderColor="blackAlpha.500"
                         />
                         <FormLabel>Last name</FormLabel>
                         <Input
+                          id="lastname"
                           placeholder="Last name"
                           _placeholder={{ color: "blackAlpha.700" }}
                           borderColor="blackAlpha.500"
@@ -208,9 +218,37 @@ const Login = () => {
                           </Button>
                         </InputRightElement>
                       </InputGroup>
-                      <FormHelperText textAlign="right">
+                      {/* <FormHelperText textAlign="right">
                         <Link color={"blackAlpha.900"}>Forgot Password?</Link>
-                      </FormHelperText>
+                      </FormHelperText> */}
+                    </FormControl>
+                    <FormControl isRequired>
+                      <FormLabel>Confirm Password </FormLabel>
+                      <InputGroup>
+                        <InputLeftElement
+                          pointerEvents="none"
+                          children={<CFaLock color="blackAlpha.900" />}
+                        />
+                        <Input
+                          type={showPassword1 ? "text" : "password"}
+                          placeholder="Confirm Password"
+                          pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$"
+                          _placeholder={{ color: "blackAlpha.700" }}
+                          borderColor="blackAlpha.500"
+                        />
+                        <InputRightElement width="4.5rem">
+                          <Button
+                            h="1.75rem"
+                            size="sm"
+                            onClick={handleShowClick1}
+                          >
+                            {showPassword1 ? "Hide" : "Show"}
+                          </Button>
+                        </InputRightElement>
+                      </InputGroup>
+                      {/* <FormHelperText textAlign="right">
+                        <Link color={"blackAlpha.900"}>Forgot Password?</Link>
+                      </FormHelperText> */}
                     </FormControl>
                     <ButtonGroup spacing={4}>
                       <Button
@@ -218,7 +256,7 @@ const Login = () => {
                         variant="solid"
                         colorScheme={"red"}
                         size="md"
-                        mr={4}
+                        mr={2}
                         // padding={"7px"}
                       >
                         Submit
@@ -237,7 +275,7 @@ const Login = () => {
                     </ButtonGroup>
                   </Stack>
                 </form>
-              </Box>
+              </Flex>
             </Stack>
             <Box color={"whiteAlpha.900"}>
               Already Registered?{" "}
