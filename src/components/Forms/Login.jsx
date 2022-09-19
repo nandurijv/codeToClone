@@ -38,17 +38,17 @@ const Login = () => {
 
   return (
     <Grid
-      width={"100%"}
-      px={4}
-      py={4}
-      gridAutoFlow={isLargerThan30 ? "column" : "rows"}
-      alignItems={"center"}
-      justifyContent={"space-around"}
+    width={"100%"}
+    px={4}
+    py={4}
+    gridAutoFlow={isLargerThan30 ? "column" : "rows"}
+    alignItems={"center"}
+    justifyContent={"space-around"}
     >
       <GridItem>
         <Flex
           width={"100%"}
-          h={"auto"}
+          h={isLargerThan30 ? "auto":"100vh"}
           direction="column"
           alignItems={"center"}
           justifyContent={"center"}

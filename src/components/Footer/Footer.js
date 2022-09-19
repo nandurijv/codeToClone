@@ -15,7 +15,8 @@ import {
   Text,
 } from "@chakra-ui/react";
 import FormLogo from "../Icons/FormLogo";
-import { PhoneIcon, EmailIcon } from "@chakra-ui/icons";
+import { Icon, PhoneIcon, EmailIcon } from "@chakra-ui/icons";
+import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
 function Footer() {
   const [isLargerThan30] = useMediaQuery("(min-width: 30em)");
@@ -64,6 +65,14 @@ function Footer() {
                 9460290262
               </Flex>
             </Box>
+          </Flex>
+
+          <Flex alignItems={"center"} justifyContent={isLargerThan30? "center":"flex-start"}>
+            <Link href="https://www.instagram.com/ieeessit/">
+            <Icon mr={4} w={8} h={8} as={FaInstagram} /></Link>
+            <Link href="https://www.linkedin.com/company/ieee-ssit-vit/">
+            <Icon w={8} h={8} as={FaLinkedinIn} />
+            </Link>
           </Flex>
         </VStack>
         <Flex
