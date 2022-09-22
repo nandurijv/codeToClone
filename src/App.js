@@ -1,54 +1,69 @@
-<<<<<<< HEAD
-import React from 'react';
+import * as React from "react";
+import { ChakraProvider } from "@chakra-ui/react";
+import Navbar from "./components/Navbar/Navbar";
+import CoverPage from "./components/CoverPage/CoverPage";
+import EventCarousel from "./components/EventCarousel/EventCarousel";
+import { EventData } from "./components/EventCarousel/EventData";
+import RegistrationForm from "./components/Forms/RegistrationForm";
+import Login from "./components/Forms/Login";
+import Timeline from "./components/Timeline/Timeline";
+import FAQs from "./components/FAQs/FAQs";
+import Help from "./components/HelpIcon/Help";
+import { Box } from "@chakra-ui/react";
+import { createRoot } from "react-dom/client";
 import {
-  ChakraProvider,
-  Box,
-  Text,
-  Link,
-  VStack,
-  Code,
-  Grid,
-  theme,
-} from '@chakra-ui/react';
-import { ColorModeSwitcher } from './ColorModeSwitcher';
-import { Logo } from './Logo';
+  createBrowserRouter,
+  RouterProvider,
+  //  Route
+} from "react-router-dom";
+import RegisterNow from "./components/RegisterNow/RegisterNow";
+import Footer from "./components/Footer/Footer";
 
 function App() {
-  return (
-    <ChakraProvider theme={theme}>
-      <Box textAlign="center" fontSize="xl">
-        <Grid minH="100vh" p={3}>
-          <ColorModeSwitcher justifySelf="flex-end" />
-          <VStack spacing={8}>
-            <Logo h="40vmin" pointerEvents="none" />
-            <Text>
-              Edit <Code fontSize="xl">src/App.js</Code> and save to reload.
-            </Text>
-            <Link
-              color="teal.500"
-              href="https://chakra-ui.com"
-              fontSize="2xl"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn Chakra
-            </Link>
-          </VStack>
-        </Grid>
-      </Box>
-=======
-import * as React from 'react';
-import { ChakraProvider } from '@chakra-ui/react';
-import Navbar from './components/Navbar/Navbar';
-import CoverPage from './components/CoverPage/CoverPage';
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: (
+        <ChakraProvider>
+          <Box sx={{color: "white" }}>
+            <Navbar />
+            <CoverPage />
+            <EventCarousel slides={EventData} />
+            <Timeline />
+            <RegisterNow />
+            <FAQs />
+            <Help />
+            <Footer/>
+          </Box>
+        </ChakraProvider>
+      ),
+    },
+    {
+      path: "/register",
+      element: (
+        <ChakraProvider>
+          <Box sx={{ background: "black", color: "white" }}>
+            <RegistrationForm />
+          </Box>
+        </ChakraProvider>
+      ),
+    },
+    {
+      path: "/login",
+      element: (
+        <ChakraProvider>
+          <Box sx={{ background: "black", color: "white" }}>
+            <Login />
+          </Box>
+        </ChakraProvider>
+      ),
+    },
+  ]);
 
-function App() {
-  return (
-    <ChakraProvider>
-      <Navbar/>
-      <CoverPage/>
->>>>>>> 3b49628ce301ef633e92d1faa6b624df6d933430
-    </ChakraProvider>
+  createRoot(document.getElementById("root")).render(
+    <React.StrictMode>
+      <RouterProvider router={router} />
+    </React.StrictMode>
   );
 }
 

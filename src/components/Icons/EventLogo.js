@@ -1,11 +1,12 @@
 import React from "react";
+import "./animation.css";
 
-function EventLogo() {
+function EventLogo(props) {
   return (
     <>
       <svg
-        width="504"
-        height="258"
+        id="svg2"
+        width={props.width}
         viewBox="0 0 504 258"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
