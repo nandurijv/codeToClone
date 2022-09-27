@@ -21,7 +21,7 @@ function RegisterNow() {
   return (
     <>
       <Flex
-        bg={"gray.900"}
+        bg={"blackAlpha.900"}
         width={"100%"}
         px={4}
         py={8}

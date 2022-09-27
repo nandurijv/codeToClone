@@ -5,9 +5,9 @@ import "react-responsive-carousel/lib/styles/carousel.css";
 const EventCarousel = ({ slides }) => {
   return (
     <>
-      <Box id="Details" py={10} bg={"gray.900"}>
+      <Box id="Details" py={20} bg={"blackAlpha.900"}>
         <Heading textAlign={"center"}>Event Details</Heading>
-        <Carousel infiniteLoop autoPlay showThumbs={"false"}>
+        <Carousel infiniteLoop  showThumbs={"false"}>
           {slides.map((slide) => {
             return (
               <Flex
@@ -16,8 +16,9 @@ const EventCarousel = ({ slides }) => {
                 justifyContent={"center"}
                 alignItems={"center"}
               >
-                <Box px={4} py={4} margin={10}>
-                  <Text align={"center"}>{slide.text}</Text>
+                <Box px={4} py={4} margin={10} w={"85%"}>
+                  <Heading color="rgb(141 18 18)" pb={8}>{slide.heading}</Heading>
+                  <Text fontSize="17px" align={"left"} style={{whiteSpace: "pre-line"}} pl={2} pr={"auto"}>{slide.text}</Text>
                 </Box>
               </Flex>
             );
